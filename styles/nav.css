@@ -87,24 +87,32 @@
 /* nav3 below */
 #nav3{
     background: white;
+    display:flex;
+    border:5px solid  blue;
+    gap:500px;
+    justify-content:space-around;
 }
 
-.show{
+.showData{
     /* display:flex; */
     /* display:block; */
     display:none;
-    /* justify-content: space-around;
+    /* justify-content: space-around; 
     gap:50px;
     margin:auto;
     width:80%; */
-    /* display:none; */
+    
 }
 
-
-.menHover{
-    background: red;
+.show{
+    display:flex;
+    width:90%;
+    margin:auto;
+    justify-content:center;
+    gap:100px;
+    border:1px solid red;
+    /* position:relative; */
 }
-
 
 
 .nav3-clothing{
@@ -112,7 +120,8 @@
     flex-direction:column;
     gap:20px;
     justify-content: flex-start;
-    width:40%;
+    /* width:60%; */
+    /* border:1px solid red; */
 }
 
 .cloth-flex{
@@ -140,6 +149,7 @@
     display:flex;
     flex-direction:column;
     gap:20px;
+    /* width:60%; */
 }
 
 .access-flex{
@@ -160,25 +170,57 @@
 }
 
 
-.menHover:hover+.show{
+
+
+
+.show:hover .showData{
     
     display:flex;
     cursor:pointer;
     
     justify-content: space-around;
-    gap:50px;
+    gap:100px;
+    width:80%;
     margin:auto;
-    width:100%;
     border:1px solid blue;
-   
-    
-   
-    
+    position:absolute;
+    top:125px;
+    bottom:10px;
+    left:150px;
+    overflow-y:scroll;
+    /* background: #000; */
+    /* color:white; */
+    /* color:white; */
 }
+
+
 
 /*  mens nav css is over but data lapsing */
 
-/*  women css */
+/* container 1 css */
+
+#container{
+     display:grid;
+     grid-template-columns: repeat(3,1fr);
+     grid-template-rows:500px 300px 200px;
+}
+
+
+/* container 1 css */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
