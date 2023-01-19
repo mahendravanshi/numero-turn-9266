@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/nav.css">
-    <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/footer.css">
-    <title>Eams</title>
+    <link rel="stylesheet" href="./styles/mens.css">
+    <title>Kids Page</title>
 </head>
 <body>
+
+
+    <!-- nav  -->
 
     <div id="nav">
           
@@ -34,7 +37,11 @@
                 <img src="./images/logo.svg" alt="">
             </div>
             <div id="nav-search">
-                    <input type="text" placeholder="Search">
+                   
+                   <form action="">
+                    <input type="text" placeholder="Search" id="topSearch">
+                      <input type="submit" value="Search">
+                   </form>
             </div>
             <div id="nav-account">
                 
@@ -161,7 +168,7 @@
 
                     <div class="nav3-clothing">
 
-                        <h3>Clothing</h3>
+                        <h3><a href="womens.html">Clothing</a></h3>
                         <hr>
                         <div class="cloth-flex">
                             <div>
@@ -261,7 +268,7 @@
 
                     <div class="nav3-clothing">
 
-                        <h3>Clothing</h3>
+                        <h3><a href="kids.html">Clothing</a></h3>
                         <hr>
                         <div class="cloth-flex">
                             <div>
@@ -1022,65 +1029,28 @@
     </div> 
      <!-- //main nav div -->
 
+    <!-- nav -->
 
-     <div id="container1">
 
-     </div>
+    <!-- main data -->
 
-     <div id="shop-by">
-        <h1>SHOP BY ACTIVITY</h1>
-        <div id="shop-by-img">
-             
+    <div id="menPage"><h3>Kids Page</h3></div>
+
+    <div id="main">
+        <div id="main-left">
+            <select name="" id="filter-price">
+                <option value="">Sort by price</option>
+                <option value="asc">Low to High</option>
+                <option value="desc">High to Low</option>
+            </select>
         </div>
-     </div>
 
-     <div id="shop-by-bottom">
-
-     </div>
-
-     <div id="camping-gear">
-
-     </div>
-
-     <div id="explore">
-        <h1>MORE TO EXPLORE</h1>
-        <div id="exp-cont">
-
-        </div>
-     </div>
-
-     <div id="foot-terrain">
-        <h2>FOOTWEAR FOR ANY TERRAIN</h2>
-        <div id="foot-cont">
-
-        </div>
-     </div>
-
-
-    <div id="follow-insta">
-        <div>
-            <h2>FOLLOW US ON INSTAGRAM</h2>
-          <div id="insta-img"> </div>
-        </div>
+        <div id="container"></div>
     </div>
-
-    <div id="instaBottomMain">
-        <div id="instaBottom">
-        
-        </div>
-    </div>
-
-   <div id="top-brands">
-    <div>
-        <h1>TOP BRANDS</h1>
-        <div id="top-brands-div">
-
-        </div>
-    </div>
-   </div>
+    <!-- main data -->
 
 
-   <!-- footer bottom -->
+    <!-- footer bottom -->
 
    
     <div id="footer">
@@ -1163,5 +1133,5 @@
 </body>
 </html>
 
-<script src="./scripts/index.js"></script>
 
+<script src="./scripts/kids.js"></script>
