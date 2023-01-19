@@ -47,16 +47,25 @@
 }
 
 #nav-search{
-    width:50%;
+    width:40%;
 }
-#nav-search>input{
-    width:100%;
+#nav-search>form{
+    display:flex;
+}
+#nav-search input[type="text"]{
+    width:70%;
     height:90%;
     padding:10px 0px;
 }
+#nav-search input[type="submit"]{
+    width:30%;
+    height:90%;
+    padding:10px 0px;
+    background: rgba(84, 84, 151, 0.311);
+}
 
 #nav-account{
-    width:18%;
+    width:20%;
     display:flex;
     gap:5px;
     border:2px solid black;
@@ -88,7 +97,7 @@
 #nav3{
     background: white;
     display:flex;
-    border:5px solid  blue;
+    /* border:5px solid  blue; */
     gap:500px;
     justify-content:space-around;
 }
@@ -106,12 +115,19 @@
 
 .show{
     display:flex;
-    width:90%;
+    width:50%;
     margin:auto;
+    padding:5px 0px;
     justify-content:center;
+    align-items:center;
     gap:100px;
-    border:1px solid red;
+    /* border:1px solid red; */
     /* position:relative; */
+}
+
+.show>p:hover{
+     cursor:pointer;
+     border-bottom:5px solid red;
 }
 
 
@@ -188,25 +204,18 @@
     bottom:10px;
     left:150px;
     overflow-y:scroll;
+    background: rgb(84, 7, 7);
+    color:white;
     /* background: #000; */
     /* color:white; */
     /* color:white; */
+    z-index:10;
 }
 
 
 
 /*  mens nav css is over but data lapsing */
 
-/* container 1 css */
-
-#container{
-     display:grid;
-     grid-template-columns: repeat(3,1fr);
-     grid-template-rows:500px 300px 200px;
-}
-
-
-/* container 1 css */
 
 
 
