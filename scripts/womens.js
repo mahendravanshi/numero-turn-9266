@@ -1,6 +1,21 @@
 
+import nav from "./nav.js"
+import footer from "./footer.js"
+
+let mainFooter = document.getElementById("footer");
+let mainNav = document.getElementById("nav")
+
+mainNav.innerHTML = nav;
+mainFooter.innerHTML = footer;
+
+
+let cartArr = (JSON.parse(localStorage.getItem("cartLS"))) ||[];
+console.log(cartArr)
+
+
 let topSearch = document.getElementById("topSearch");
 let form = document.querySelector("form");
+let total = document.querySelector("#total");
 
 
 
@@ -20,16 +35,49 @@ filterPrice.addEventListener("change",filterPriceFun);
 
 function filterPriceFun(){
 
-    if(filterPrice.value==""){
-        fetchData(url)
-    }
+    if(topSearch.value!=""){
+     
+        
+          
+        
+    
 
-    if(filterPrice.value=="asc"){
-        fetchData(url2)
-    }
-    if(filterPrice.value=="desc"){
-        fetchData(url3)
-    }
+        if(filterPrice.value==""){
+            fetchData(url)
+        }
+
+        if(filterPrice.value=="asc"){
+            let url2 = `http://localhost:8080/womens?_sort=price&_order=asc&q=${topSearch.value}`
+            console.log("INSIDE")
+            fetchData(url2)
+        }
+        if(filterPrice.value=="desc"){
+            let url3 = `http://localhost:8080/womens?_sort=price&_order=desc&q=${topSearch.value}`
+
+            fetchData(url3)
+
+        }
+
+}
+
+else{
+
+if(filterPrice.value==""){
+    fetchData(url)
+}
+
+if(filterPrice.value=="asc"){
+    let url2 = "http://localhost:8080/kids?_sort=price&_order=asc";
+    fetchData(url2)
+
+}
+
+if(filterPrice.value=="desc"){
+    let url3 = "http://localhost:8080/kids?_sort=price&_order=desc";
+    fetchData(url3)
+}
+}
+
 
 }
 
@@ -74,8 +122,8 @@ function displayData(data){
         let img = document.createElement("img");
         img.src = el.img;
 
-        let title = document.createElement("p");
-        title.innerText = el.title1;
+        let title1 = document.createElement("h4");
+        title1.innerText = el.title1;
 
         let title2 = document.createElement("p");
         title2.innerText = el.title2;
@@ -83,14 +131,82 @@ function displayData(data){
         let price = document.createElement("p");
         price.innerText = el.price;
 
-        let add_to_cart = document.createElement("button");
-        add_to_cart.innerText = "Add to Cart"
+        let add = document.createElement("button");
+        add.innerText = "Add to Cart"
         // add_to_cart
 
+        
 
-        div.append(img,title,title2,price,add_to_cart);
+        add.addEventListener("click",()=>{
+            
+            if(checkData(el)){
+                alert("Product already in cart");
+            }
+
+            else{
+                cartArr.push({...el,quantity:1});
+                // console.log(cartArr)
+
+                localStorage.setItem("cartLS",JSON.stringify(cartArr))
+                alert("Product added to cart")
+            }
+             
+        })
+
+
+        div.append(img,title1,title2,price,add);
         container.append(div)
+
+
+        total.innerText = data.length;
 
 
     })
 }
+
+function checkData(el){
+
+    for(let i=0;i<cartArr.length;i++){
+        if(cartArr[i].title1==el.title1&&cartArr[i].price==el.price){
+            // console.log(el)
+            return true
+        }
+    }
+
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// navbar one"
+
+let logoNav = document.getElementById("logoImg");
+let cartNav = document.getElementById("nav-cart");
+let signNav = document.getElementById("nav-account");
+
+
+
+logoNav.addEventListener("click",()=>{
+   window.location.href = "index.html"
+})
+
+cartNav.addEventListener("click",()=>{
+    window.location.href = "cart.html"
+})
+
+
+signNav.addEventListener("click",()=>{
+    window.location.href = "signup.html"
+})

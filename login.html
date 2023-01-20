@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+
+    <title>Login Page</title>
+
+    <style>
+        #formMain{
+            width:100%;
+            margin:auto;
+            margin:20px 0px;
+        }
+        #login{
+            width:30%;
+            display:flex;
+            padding:10px;
+            flex-flow:column;
+            /* border:1px solid red; */
+            gap:20px;
+            text-align:center;
+            border-radius:10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin:20px 0px;
+            margin:auto;
+
+
+        }
+
+        #login>input[type="text"],input[type="email"],input[type="password"]{
+            width:80%;
+            padding:15px;
+            border-radius:10px;
+            margin:auto;
+        }
+
+        #login>input[type="submit"]{
+            width:50%;
+            margin:auto;
+            padding:10px 20px;
+            border:none;
+            background: #000;
+            color:white;
+            border-radius:10px;
+            cursor:pointer;
+            font-size:18px;
+
+        }
+        #showPass{
+            display:flex;
+            justify-content: flex-start;
+            padding-left:50px;
+            gap:10px;
+        }
+        #login>input[type="submit"]+div{
+            display:flex;
+            /* border:1px solid red; */
+            justify-content:center;
+            gap:10px;
+
+
+        }
+
+        #login a{
+            /* color:#000 */
+            color:blue;
+            text-decoration: none;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div id="nav"></div>
+    <!-- nav above -->
+
+    
+    <div id="formMain">
+        <form action="" id="login">
+            <h3>Log in</h3>
+            
+            <input type="email" name="" id="email" placeholder="Enter your email" required>
+            <input type="password" name="" id="password" placeholder="Enter your password" required>
+    
+            <div id="showPass"><input type="checkbox" id="check">Show Password</div>
+            <input type="submit" value="SUBMIT" name="">
+            <div>
+                <h3>Create an account</h3>
+                <div><a href="signup.html"><h4>sign up</h4></a></div>
+            </div>
+            
+        </form>
+    </div>
+
+    
+
+   <!-- footer below -->
+   <div id="footer"></div>
+    
+</body>
+</html>
+
+
+<script src="./scripts/login.js" type="module">
+    
+
+</script>

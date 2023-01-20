@@ -1,5 +1,12 @@
 
+import nav from "./nav.js"
+import footer from "./footer.js"
 
+let mainFooter = document.getElementById("footer");
+let mainNav = document.getElementById("nav")
+
+mainNav.innerHTML = nav;
+mainFooter.innerHTML = footer;
 
 
 let container1 = document.querySelector("#container1");
@@ -253,6 +260,25 @@ function fetchContainer1(data){
 
 
 
+// navbar one"
 
+let logoNav = document.getElementById("logoImg");
+let cartNav = document.getElementById("nav-cart");
+let signNav = document.getElementById("nav-account");
+
+
+
+logoNav.addEventListener("click",()=>{
+   window.location.href = "index.html"
+})
+
+cartNav.addEventListener("click",()=>{
+    window.location.href = "cart.html"
+})
+
+
+signNav.addEventListener("click",()=>{
+    window.location.href = "signup.html"
+})
 
 

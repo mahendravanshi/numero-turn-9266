@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <title>Signup Page</title>
+
+    <style>
+        #formMain{
+            width:100%;
+            margin:auto;
+            margin:20px 0px;
+        }
+        #signup{
+            width:30%;
+            display:flex;
+            padding:10px;
+            flex-flow:column;
+            /* border:1px solid red; */
+            gap:20px;
+            text-align:center;
+            border-radius:10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin:20px 0px;
+            margin:auto;
+
+
+        }
+
+        #signup>input[type="text"],input[type="email"],input[type="password"]{
+            width:80%;
+            padding:10px;
+            border-radius:10px;
+            margin:auto;
+        }
+
+        #signup>input[type="submit"]{
+            width:50%;
+            margin:auto;
+            padding:10px 20px;
+            border:none;
+            background: #000;
+            color:white;
+            border-radius:10px;
+            cursor:pointer;
+            font-size:18px;
+
+        }
+        #showPass{
+            display:flex;
+            justify-content: flex-start;
+            padding-left:50px;
+            gap:10px;
+        }
+        #signup>input[type="submit"]+div{
+            display:flex;
+            /* border:1px solid red; */
+            justify-content:center;
+            gap:10px;
+
+
+        }
+
+        #signup a{
+            /* color:#000 */
+            color:blue;
+            text-decoration: none;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div id="nav"></div>
+    <!-- nav above -->
+
+    
+    <div id="formMain">
+        <form action="" id="signup">
+            <h3>Create Account</h3>
+            <input type="text" name="" id="fname" placeholder="Enter your first name" required>
+            <input type="text" name="" id="lname" placeholder="Enter your last name" required>
+            <input type="email" name="" id="email" placeholder="Enter your email" required>
+            <input type="password" name="" id="password" placeholder="Enter your password" required>
+    
+            <div id="showPass"><input type="checkbox" id="check">Show Password</div>
+            <input type="submit" value="SUBMIT" name="">
+            <div>
+                <h3>Already have an account</h3>
+                <div><a href="login.html"><h4>log in</h4></a></div>
+            </div>
+            
+        </form>
+    </div>
+
+    
+
+   <!-- footer below -->
+   <div id="footer"></div>
+    
+</body>
+</html>
+
+
+<script src="./scripts/signup.js" type="module">
+    
+
+</script>
