@@ -1,0 +1,124 @@
+
+#main-cart{
+
+    width:100%;
+    /* margin:auto; */
+    border:10px solid red;
+    display:flex;
+    margin:25px 0px;
+    justify-content:center;
+}
+
+#cart-left{
+
+    width:40%;
+    margin:auto;
+    border:3px dotted black;
+}
+#cart-right{
+
+    width:40%;
+    margin:auto;
+    border:5px dotted red;
+    /* height:500px; */
+    margin-top:0px
+}
+
+
+
+#cart-container{
+
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    width:100%;
+    gap:19px;
+    margin:auto;
+    
+
+}
+
+#cart-container>div{
+    text-align:center;
+    border:1px solid red;
+
+}
+
+
+#cart-container>div>img{
+    width:100%;
+    height:50%;
+}
+
+.rem{
+    display:flex;
+    /* gap:5px; */
+    justify-content:space-evenly;
+    padding:5px;
+    /* align-content:flex-end; */
+    margin-top:20px;
+
+}
+
+.rem>button{
+
+    padding:3px 10px;
+    border-radius:5px;
+    border:none;
+    color:white;
+    background: #000;
+    
+}
+
+.rem>button:last-child{
+
+    background: red;
+}
+
+
+
+
+#cart-right{
+    display:flex;
+    flex-flow:column;
+    gap:10px;
+
+}
+
+#cart-right>div{
+    display: flex;
+    justify-content:space-around;
+}
+
+/* 
+
+
+*/
+
+
+
+#cform{
+    display:flex;
+    flex-flow:column;
+    gap:5px;
+
+}
+
+#cform>input[type="text"],input[type="email"],input[type="password"],input[type="tel"]{
+    width:80%;
+    padding:15px;
+    border-radius:10px;
+    margin:auto;
+}
+
+#cform>input[type="submit"]{
+    width:50%;
+    margin:auto;
+    padding:10px 20px;
+    border:none;
+    background: #000;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+
+}
