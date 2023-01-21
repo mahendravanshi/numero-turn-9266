@@ -17,6 +17,13 @@
     
 }
 
+#filter-price{
+    padding:10px;
+    border-radius:10px;
+    border:1px solid orange;
+    cursor:pointer;
+}
+
 #gender{
     /* border:1px solid red; */
     display:flex;
@@ -89,6 +96,14 @@
 #container>div button:hover{
     background-color:green
    
+}
+
+.loader{
+    width:100%;
+    padding-left:350px;
+    /* border: 1px solid red;; */
+    /* margin:auto; */
+    /* display:inline; */
 }
 
 

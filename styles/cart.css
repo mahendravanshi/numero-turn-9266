@@ -151,7 +151,7 @@ button:hover{
 
 
 
-@media screen and (min-width:440px) and (max-width:800px){
+@media screen and (min-width:100px) and (max-width:800px){
     
     #cart-container{
 

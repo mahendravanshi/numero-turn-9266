@@ -9,8 +9,16 @@ mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
 
 
+let img = document.createElement("img");
+img.setAttribute("class","loader");
+
+
 let cartArr = (JSON.parse(localStorage.getItem("cartLS"))) ||[];
-console.log(cartArr)
+// console.log(cartArr)
+let navCount = document.getElementById("cart-show-nav");
+navCount.innerText= cartArr.length;
+
+
 
 
 let topSearch = document.getElementById("topSearch");
@@ -25,6 +33,8 @@ let container1 = document.getElementById("container")
 let url = "http://localhost:8080/womens?";
 let url2 = "http://localhost:8080/womens?_sort=price&_order=asc";
 let url3 = "http://localhost:8080/womens?_sort=price&_order=desc";
+
+let isLoader = true;
 fetchData(url);
 
 
@@ -98,15 +108,29 @@ function formSubmit(){
 
 async function fetchData(url){
 
-    let res = await fetch(url);
-
-    let data = await res.json();
-
-    // console.log(data)
-
-    fetchedArr = data;
-
-    displayData(data);
+    try {
+        if(isLoader){
+        
+            // img.src = "https://img.freepik.com/free-icon/waiting_318-541180.jpg?size=338&ext=jpg&ga=GA1.1.1919601102.1674298651&semt=sph"
+            img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVLETmYH1vvT-g6wLKLiX2qRw-laLp1c9DeQ&usqp=CAU"
+            container1.append(img)
+            // container1.innerText = "fetching"
+        }
+        let res = await fetch(url);
+    
+        let data = await res.json();
+    
+        
+    
+        fetchedArr = data;
+        isLoader = false;
+        if(!isLoader){
+    
+            displayData(data);
+        }
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 
@@ -146,7 +170,8 @@ function displayData(data){
             else{
                 cartArr.push({...el,quantity:1});
                 // console.log(cartArr)
-
+                navCount.innerText = cartArr.length;
+                
                 localStorage.setItem("cartLS",JSON.stringify(cartArr))
                 alert("Product added to cart")
             }
@@ -155,7 +180,7 @@ function displayData(data){
 
 
         div.append(img,title1,title2,price,add);
-        container.append(div)
+        container1.append(div)
 
 
         total.innerText = data.length;

@@ -23,7 +23,8 @@ let total = document.getElementById("totalPrice")
 
 let cartArr = (JSON.parse(localStorage.getItem("cartLS"))) ||[];
 let checkArr = JSON.parse(localStorage.getItem("check-form"))||[];
-
+let navCount = document.getElementById("cart-show-nav")
+navCount.innerText = cartArr.length;
 // console.log(cartArr)
 
 
@@ -90,7 +91,8 @@ function displayData(data){
                     return false
                 }
             })
-
+          navCount.innerText = cartArr.length;
+             
             localStorage.setItem("cartLS",JSON.stringify(cartArr))
             displayData(cartArr);
             window.location.reload();
@@ -121,8 +123,7 @@ function displayData(data){
 
 }
 
-let x = checkArr[checkArr.length-1].data;
-console.log(x);
+
 
 let form = document.getElementById("cform");
 form.addEventListener("submit",formData)

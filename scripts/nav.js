@@ -35,11 +35,12 @@ let nav = `
 <div id="nav-account">
     
         <img src="./images/user.png" alt="">
-        <h3>My Accounts</h3>
+        <p>My Accounts</p>
     
 </div>
 <div id="nav-cart">
     <img src="./images/cart.png" alt="">
+    <p id="cart-show-nav">0</p>
     <p>Cart</p>
 </div>
 
