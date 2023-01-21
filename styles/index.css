@@ -1,5 +1,13 @@
 /* container 1 css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+*{
+    font-family:Poppins;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+
+}
 #container1{
     display:grid;
     grid-template-columns: repeat(3,1fr);
