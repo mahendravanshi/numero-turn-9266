@@ -9,7 +9,7 @@ mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
 
 
-let cartArr = JSON.parse(localStorage.getItem("cartLS"))||[];
+let cartArr = JSON.parse(localStorage.getItem("trend-cart-key"))||[];
 let navCount = document.getElementById("cart-show-nav")
 
 navCount.innerText = cartArr.length;
