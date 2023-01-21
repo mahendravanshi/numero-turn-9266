@@ -9,6 +9,12 @@ mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
 
 
+let cartArr = JSON.parse(localStorage.getItem("cartLS"))||[];
+let navCount = document.getElementById("cart-show-nav")
+
+navCount.innerText = cartArr.length;
+
+
 let container1 = document.querySelector("#container1");
 let container2 = document.querySelector("#shop-by-img");
 let container3 = document.querySelector("#shop-by-bottom");

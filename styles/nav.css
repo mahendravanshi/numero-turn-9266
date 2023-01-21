@@ -83,10 +83,11 @@
 #nav-account{
     width:15%;
     display:flex;
-    gap:5px;
     border:2px solid black;
+    justify-content:space-around;
     padding:4px 0px;
     cursor: pointer;
+    align-items:center;
 
 }
 #nav-account>img{
@@ -96,15 +97,19 @@
 
 #nav-cart{
     display:flex;
-    width:5%;
+    width:10%;
     gap:7px;
+    justify-content:space-around;
+    align-items:center;
+
     border:2px solid black;
     /* padding:4px 0px; */
     cursor:pointer;
+    padding:3px 0px;
 }
 #nav-cart>img{
-    width:30%;
-    height:100%;
+    width:20%;
+    height:60%;
 }
 
 
