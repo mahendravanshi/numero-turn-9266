@@ -16,7 +16,7 @@ let cArr = JSON.parse(localStorage.getItem("check-form"))||[];
 let x = cArr[cArr.length-1].data;
 
 
-localStorage.removeItem("cartLS")
+localStorage.removeItem("trend-cart-key")
 
 
 
@@ -42,7 +42,7 @@ function checkOut(){
     },4000)
     
     setTimeout(()=>{
-       st.style.color = green;
+        st.style.color = green;
         st.innerText = "Your order is  placed succesfully"
         img.src = "https://media3.giphy.com/media/tf9jjMcO77YzV4YPwE/200w.webp?cid=ecf05e47qgsgays15orwqhuho9x8vgcqmncdoigzvq6xk61b&rid=200w.webp&ct=g"
     },6000)

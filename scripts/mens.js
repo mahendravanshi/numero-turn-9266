@@ -14,7 +14,7 @@ mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
 
 
-let cartArr = (JSON.parse(localStorage.getItem("cartLS"))) ||[];
+let cartArr = (JSON.parse(localStorage.getItem("trend-cart-key"))) ||[];
 console.log(cartArr)
 let navCount = document.getElementById("cart-show-nav");
 navCount.innerText= cartArr.length;
@@ -183,7 +183,7 @@ function displayData(data){
                 // console.log(cartArr)
                 navCount.innerText = cartArr.length;
                 
-                localStorage.setItem("cartLS",JSON.stringify(cartArr))
+                localStorage.setItem("trend-cart-key",JSON.stringify(cartArr))
                 alert("Product added to cart")
             }
              
