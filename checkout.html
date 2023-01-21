@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+            *{
+                font-family:Poppins;
+                margin: 0;
+                padding: 0;
+                /* border: 1px solid red; */
+
+            }
+        #main{
+            display:grid;
+            place-items:center;
+            background: rgba(255, 255, 255, 0.567);
+            margin:auto;
+            width:100vw;
+            height:100vh;
+        }
+        #mainCenter{
+            display:flex;
+            justify-content:center;
+            gap:5px;
+        }
+        #order-status{
+            text-align:center;
+        }
+        #img{
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main">
+
+        <div id="mainCenter">
+            <h1 id="order-status"></h1>
+            <div><img src="" alt="" id="img"></div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
+
+
+<script src="./scripts/checkout.js"></script>

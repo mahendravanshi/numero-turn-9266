@@ -53,7 +53,8 @@
     padding:4px;
     transition:.8s ;
     /* opacity:.99; */
-    border:.5px solid orange;
+    border:1px solid black;
+    border-radius: 5px;
 }
 #container>div:hover{
     cursor:pointer;
@@ -90,3 +91,31 @@
    
 }
 
+
+
+
+@media screen and (min-width:750px) and (max-width:1000px) {
+    
+    #container{
+    grid-template-columns: repeat(3,1fr);
+
+    }
+}
+@media screen and (min-width:500px) and (max-width:749px) {
+    
+    #container{
+    grid-template-columns: repeat(2,1fr);
+       width:60%;
+    }
+
+
+
+
+}
+@media screen and  (max-width:499px) {
+    
+    #container{
+    grid-template-columns: repeat(1,1fr);
+        width:75%;
+    }
+}
