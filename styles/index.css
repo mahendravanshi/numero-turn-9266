@@ -96,8 +96,9 @@
 /* container 3 css shop by bottom css */
 
 #shop-by-bottom{
-    display:flex;
-    justify-content: space-around;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+
     margin:auto;
     width:70%;
     /* border:1px solid red; */
@@ -378,6 +379,110 @@
 
 
 /* container-9 top  brands */
+
+
+
+
+
+
+
+
+/* media */
+
+
+
+
+@media screen and (min-width:700px) and (max-width:1200px) {
+   
+    #container1{
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas:
+    "img1 img1"
+    "img2 img3"
+    "img4 img4"
+    "img5 img5"
+    }
+
+
+    #shop-by-bottom{
+    grid-template-columns:repeat(1,1fr);
+
+    }
+
+    #camping-gear{
+    grid-template-columns:repeat(2,1fr);
+    grid-template-areas:
+    "img1 img1"
+    "img2 img2"
+    "img3 img3"
+    "img4 img4"
+        
+    }
+    #exp-cont{
+    grid-template-columns: repeat(2,1fr);
+
+    }
+    #foot-cont{
+    grid-template-columns:repeat(2,1fr);
+
+    }
+    #instaBottom{
+    grid-template-columns:repeat(2,1fr);
+
+    }
+
+    #top-brands-div{
+    grid-template-columns: repeat(2,1fr);
+
+    }
+
+}
+@media screen and (max-width:699px) {
+   
+    #container1{
+    grid-template-columns: repeat(1,1fr);
+    grid-template-areas:
+    "img1"
+    "img2"
+    "img3"
+    "img4"
+    "img5"
+    }
+
+
+    #shop-by-bottom{
+    grid-template-columns:repeat(1,1fr);
+
+    }
+
+    #camping-gear{
+    grid-template-columns:repeat(1,1fr);
+    grid-template-areas:
+    "img1"
+    "img2"
+    "img3"
+    "img4"
+        
+    }
+    #exp-cont{
+    grid-template-columns: repeat(1,1fr);
+
+    }
+    #foot-cont{
+    grid-template-columns:repeat(1,1fr);
+
+    }
+    #instaBottom{
+    grid-template-columns:repeat(1,1fr);
+
+    }
+
+    #top-brands-div{
+    grid-template-columns: repeat(1,1fr);
+
+    }
+
+}
 
 
 

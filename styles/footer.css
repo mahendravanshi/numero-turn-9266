@@ -9,7 +9,7 @@
 }
 
 #footer{
-    width:100%;
+    width:100vw;
     background: #313f35;
     color:white;
     margin-top:25px;
@@ -29,17 +29,21 @@
 
 #footer-top{
     display:flex;
-    justify-content:space-around;
+    justify-content:flex-start;
     gap:25px;
-    /* margin:auto; */
+    /* margin-left:50px; */
+    margin:auto;
 }
 
 
 .footer-top-col{
     display:flex;
     flex-flow:column;
+    justify-content:center;
     gap:10px;
 }
+
+
 
 .footer-top-col>h5{
     font-size:15px;
@@ -122,6 +126,17 @@ hr{
 }
 
 
+
+@media screen and (max-width:1050px) {
+    #footer-top{
+        display:flex;
+        flex-flow:column;
+        justify-content:flex-start;
+        gap:25px;
+        /* margin-left:50px; */
+        margin:auto;
+    }
+}
 
 
 

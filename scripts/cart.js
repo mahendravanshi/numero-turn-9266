@@ -22,7 +22,9 @@ let total = document.getElementById("totalPrice")
 
 
 let cartArr = (JSON.parse(localStorage.getItem("cartLS"))) ||[];
-console.log(cartArr)
+let checkArr = JSON.parse(localStorage.getItem("check-form"))||[];
+
+// console.log(cartArr)
 
 
 displayData(cartArr);
@@ -105,10 +107,12 @@ function displayData(data){
 
 
         totalLength.innerText = cartArr.length;
-        total.innerText = cartArr.reduce((acc,el)=>{
+        let x  = cartArr.reduce((acc,el)=>{
             return acc+(el.quantity*el.price);
             
        },0)
+
+       total.innerText = x.toFixed(1)
 
 
     })
@@ -116,6 +120,35 @@ function displayData(data){
 
 
 }
+
+let x = checkArr[checkArr.length-1].data;
+console.log(x);
+
+let form = document.getElementById("cform");
+form.addEventListener("submit",formData)
+
+
+function formData(){
+
+    event.preventDefault();
+
+    let obj = {
+        data:`Dear ${form.fname.value} your order will be delivered to your address : ${form.address.value} , ${form.state.value},${form.pin.value} within 5-6 working days.`
+    }
+
+    checkArr.push(obj);
+
+    localStorage.setItem("check-form",JSON.stringify(checkArr));
+
+
+
+    window.location.href = "checkout.html"
+
+
+
+}
+
+
 
 
 
