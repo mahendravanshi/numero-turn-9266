@@ -8,29 +8,8 @@ mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
 
 
-let queryArr = JSON.parse(localStorage.getItem("query-data"))||[];
 
-let formQuery = document.querySelector("form");
-
-formQuery.addEventListener("submit",formSubmitQuery);
-
-function formSubmitQuery(){
-    event.preventDefault();
-    
-    let x = {
-        query:topSearch.value
-    }
-
-    queryArr.push(x);
-    localStorage.setItem("query-data",JSON.stringify(queryArr));
-    
-    window.location.href = "all.html";
-}
-
-let signArr = JSON.parse(localStorage.getItem("signup"))||[];
-
-
-let form = document.getElementById("login");
+let Adminform = document.getElementById("login");
 
 let check = document.getElementById("check");
 let password = document.getElementById("password")
@@ -47,34 +26,25 @@ function show(){
 }
 
 
-form.addEventListener("submit",formSubmit);
+Adminform.addEventListener("submit",formSubmit);
 
 
 function formSubmit(){
     event.preventDefault();
 
-    let email = form.email.value;
-    let pass = form.password.value;
+    let email = Adminform.email.value;
+    let pass = Adminform.password.value;
 
-    let isSign = false;
-    for(let i=0;i<signArr.length;i++){
+    
+    
+    if(email=="admin@trend.com"&&pass=="123"){
 
-        let e = signArr[i].email;
-        let p = signArr[i].pass;
-        if(e==email&&p==pass){
-            isSign = true
-            break;
-        }
-
-    }
-
-    if(isSign){
         alert("Succesfully logged in");
-        window.location.href = "index.html";
-        
+        window.location.href = "admin.html";
     }
+
     else{
-        alert("Invalid or Wrong Credentials")
+        alert("It seems you are not an admin. Please go to the user login page for user log in")
     }
    
     
@@ -92,7 +62,7 @@ function formSubmit(){
 
 
 
-// navbar one"
+
 
 let logoNav = document.getElementById("logoImg");
 let cartNav = document.getElementById("nav-cart");
@@ -112,3 +82,4 @@ cartNav.addEventListener("click",()=>{
 signNav.addEventListener("click",()=>{
     window.location.href = "signup.html"
 })
+

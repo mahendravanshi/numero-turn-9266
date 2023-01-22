@@ -7,9 +7,8 @@ let nav = `
 
 <div id="nav1">
 <div>
-    <p>Rewards</p>
-    <p>TB Schools</p>
-    <p>goEast</p>
+    
+    <a href="index.html"><p id=homepage>Go to HomePage</p></a>
 </div>
 <div>
     <p>Spend 44.04 more to get Free Ground Shipping</p>

@@ -7,6 +7,29 @@ let mainNav = document.getElementById("nav")
 mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
 
+let queryArr = JSON.parse(localStorage.getItem("query-data"))||[];
+
+let formQuery = document.querySelector("form");
+
+formQuery.addEventListener("submit",formSubmitQuery);
+
+function formSubmitQuery(){
+    event.preventDefault();
+    
+    let x = {
+        query:topSearch.value
+    }
+
+    queryArr.push(x);
+    localStorage.setItem("query-data",JSON.stringify(queryArr));
+    
+    window.location.href = "all.html";
+}
+
+
+
+
+
 
 let isImg = document.createElement("img");
 isImg.setAttribute("class","empty-image");

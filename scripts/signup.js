@@ -2,10 +2,33 @@ import nav from "./nav.js"
 import footer from "./footer.js"
 
 let mainFooter = document.getElementById("footer");
-let mainNav = document.getElementById("nav")
+let mainNav = document.getElementById("nav");
+
 
 mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
+
+
+let queryArr = JSON.parse(localStorage.getItem("query-data"))||[];
+
+let formQuery = document.querySelector("form");
+
+formQuery.addEventListener("submit",formSubmitQuery);
+
+function formSubmitQuery(){
+    event.preventDefault();
+    
+    let x = {
+        query:topSearch.value
+    }
+
+    queryArr.push(x);
+    localStorage.setItem("query-data",JSON.stringify(queryArr));
+    
+    window.location.href = "all.html";
+}
+
+
 
 let signArr = JSON.parse(localStorage.getItem("signup"))||[];
 
@@ -41,6 +64,8 @@ function formSubmit(){
 
 
     let obj = {
+        fname:fname,
+        lname:lname,
         email:email,
         pass:pass
     }

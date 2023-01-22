@@ -2,11 +2,37 @@
 import nav from "./nav.js"
 import footer from "./footer.js"
 
+let queryArr = JSON.parse(localStorage.getItem("query-data"))||[];
+
+
 let mainFooter = document.getElementById("footer");
 let mainNav = document.getElementById("nav")
 
 mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
+
+let topSearch = document.getElementById("topSearch");
+
+ 
+let formQuery = document.querySelector("form");
+
+formQuery.addEventListener("submit",formSubmitQuery);
+
+function formSubmitQuery(){
+    event.preventDefault();
+    
+    let x = {
+        query:topSearch.value
+    }
+
+    queryArr.push(x);
+    localStorage.setItem("query-data",JSON.stringify(queryArr));
+    
+    window.location.href = "all.html";
+}
+
+
+
 
 
 let cartArr = JSON.parse(localStorage.getItem("trend-cart-key"))||[];
@@ -36,8 +62,7 @@ let imgArr1 = [
 ]
 
 let shopByArr = [
-    {img:"https://cdn-icons-png.flaticon.com/128/71/71423.png",
-     text:"CAMP & HIKE"},
+   
     {img:"https://cdn-icons-png.flaticon.com/128/2530/2530005.png",
     text:"SNOW"},
     {img:"https://cdn-icons-png.flaticon.com/128/2491/2491921.png",
