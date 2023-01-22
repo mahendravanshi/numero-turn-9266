@@ -213,6 +213,7 @@ function fetchContainer3(data){
     container3.innerHTML = null;
     data.forEach(el=>{
         let div = document.createElement("div");
+        
 
         let img = document.createElement("img");
         img.src=  el.img;
@@ -260,6 +261,22 @@ function fetchContainer1(data){
 }
 
 
+// mens,womens,kids click link
+
+
+let menCLik = document.querySelector("#shop-by-bottom>div:nth-child(1)")
+let womenCLik = document.querySelector("#shop-by-bottom>div:nth-child(2)")
+let kidsCLik = document.querySelector("#shop-by-bottom>div:nth-child(3)")
+
+menCLik.addEventListener("click",()=>{
+    window.location.href = "mens.html";
+})
+womenCLik.addEventListener("click",()=>{
+    window.location.href = "womens.html";
+})
+kidsCLik.addEventListener("click",()=>{
+    window.location.href = "kids.html";
+})
 
 
 
