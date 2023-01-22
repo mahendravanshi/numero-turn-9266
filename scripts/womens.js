@@ -9,6 +9,14 @@ mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
 
 
+
+let topScroll = document.getElementById("topScroll");
+topScroll.addEventListener("click",()=>{
+    event.preventDefault();
+    window.scroll(0,0);
+})
+
+
 let img = document.createElement("img");
 img.setAttribute("class","loader");
 
@@ -30,9 +38,9 @@ let total = document.querySelector("#total");
 let fetchedArr = [];
 
 let container1 = document.getElementById("container")
-let url = "http://localhost:8080/womens?";
-let url2 = "http://localhost:8080/womens?_sort=price&_order=asc";
-let url3 = "http://localhost:8080/womens?_sort=price&_order=desc";
+let url = "https://numero-backend.vercel.app/womens?";
+let url2 = "https://numero-backend.vercel.app/womens?_sort=price&_order=asc";
+let url3 = "https://numero-backend.vercel.app/womens?_sort=price&_order=desc";
 
 let isLoader = true;
 fetchData(url);
@@ -57,12 +65,12 @@ function filterPriceFun(){
         }
 
         if(filterPrice.value=="asc"){
-            let url2 = `http://localhost:8080/womens?_sort=price&_order=asc&q=${topSearch.value}`
+            let url2 = `https://numero-backend.vercel.app/womens?_sort=price&_order=asc&q=${topSearch.value}`
             console.log("INSIDE")
             fetchData(url2)
         }
         if(filterPrice.value=="desc"){
-            let url3 = `http://localhost:8080/womens?_sort=price&_order=desc&q=${topSearch.value}`
+            let url3 = `https://numero-backend.vercel.app/womens?_sort=price&_order=desc&q=${topSearch.value}`
 
             fetchData(url3)
 
@@ -77,13 +85,13 @@ if(filterPrice.value==""){
 }
 
 if(filterPrice.value=="asc"){
-    let url2 = "http://localhost:8080/kids?_sort=price&_order=asc";
+    let url2 = "https://numero-backend.vercel.app/kids?_sort=price&_order=asc";
     fetchData(url2)
 
 }
 
 if(filterPrice.value=="desc"){
-    let url3 = "http://localhost:8080/kids?_sort=price&_order=desc";
+    let url3 = "https://numero-backend.vercel.app/kids?_sort=price&_order=desc";
     fetchData(url3)
 }
 }
@@ -97,7 +105,7 @@ function formSubmit(){
     event.preventDefault();
     let x = topSearch.value;
 
-    let url = `http://localhost:8080/womens?q=${x}`;
+    let url = `https://numero-backend.vercel.app/womens?q=${x}`;
     fetchData(url)
 
 
