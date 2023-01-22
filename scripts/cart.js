@@ -199,6 +199,13 @@ function formData(){
 }
 
 
+let topScroll = document.getElementById("topScroll");
+topScroll.addEventListener("click",()=>{
+    event.preventDefault();
+    window.scroll(0,0);
+})
+
+
 
 
 

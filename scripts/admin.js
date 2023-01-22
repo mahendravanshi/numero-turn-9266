@@ -12,6 +12,12 @@ let mainNav = document.getElementById("nav")
 mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
 
+let topScroll = document.getElementById("topScroll");
+topScroll.addEventListener("click",()=>{
+    event.preventDefault();
+    window.scroll(0,0);
+})
+
 let topSearch = document.getElementById("topSearch");
 
  

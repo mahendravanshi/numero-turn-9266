@@ -14,6 +14,12 @@ img.setAttribute("class","loader");
 mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
 
+let topScroll = document.getElementById("topScroll");
+topScroll.addEventListener("click",()=>{
+    event.preventDefault();
+    window.scroll(0,0);
+})
+
 
 let cartArr = (JSON.parse(localStorage.getItem("trend-cart-key"))) ||[];
 // console.log(cartArr)
@@ -38,9 +44,9 @@ let total = document.querySelector("#total");
 let fetchedArr = [];
 
 let container1 = document.getElementById("container")
-let url = "http://localhost:8080/all?";
-let url2 = "http://localhost:8080/all?_sort=price&_order=asc";
-let url3 = "http://localhost:8080/all?_sort=price&_order=desc";
+let url = "https://numero-backend.vercel.app/all";
+let url2 = "https://numero-backend.vercel.app/all?_sort=price&_order=asc";
+let url3 = "https://numero-backend.vercel.app/all?_sort=price&_order=desc";
 
 let isLoader = true;
 
@@ -49,7 +55,7 @@ if(queryArr.length>0){
     let x = queryArr[queryArr.length-1].query;
     console.log(x);
 
-    let url = `http://localhost:8080/all?q=${x}`;
+    let url = `https://numero-backend.vercel.app/all?q=${x}`;
     fetchData(url)
     // console.log("fetching")
 
@@ -80,12 +86,12 @@ function filterPriceFun(){
                 }
 
                 if(filterPrice.value=="asc"){
-                    let url2 = `http://localhost:8080/all?_sort=price&_order=asc&q=${topSearch.value}`
+                    let url2 = `https://numero-backend.vercel.app/all?_sort=price&_order=asc&q=${topSearch.value}`
                     console.log("INSIDE")
                     fetchData(url2)
                 }
                 if(filterPrice.value=="desc"){
-                    let url3 = `http://localhost:8080/all?_sort=price&_order=desc&q=${topSearch.value}`
+                    let url3 = `https://numero-backend.vercel.app/all?_sort=price&_order=desc&q=${topSearch.value}`
 
                     fetchData(url3)
 
@@ -100,13 +106,13 @@ function filterPriceFun(){
         }
 
         if(filterPrice.value=="asc"){
-            let url2 = "http://localhost:8080/all?_sort=price&_order=asc";
+            let url2 = "https://numero-backend.vercel.app/all?_sort=price&_order=asc";
             fetchData(url2)
 
         }
 
         if(filterPrice.value=="desc"){
-            let url3 = "http://localhost:8080/all?_sort=price&_order=desc";
+            let url3 = "https://numero-backend.vercel.app/all?_sort=price&_order=desc";
             fetchData(url3)
         }
     }
@@ -119,7 +125,7 @@ function formSubmit(){
     event.preventDefault();
     let x = topSearch.value;
 
-    let url = `http://localhost:8080/all?q=${x}`;
+    let url = `https://numero-backend.vercel.app/all?q=${x}`;
     fetchData(url)
 
 
