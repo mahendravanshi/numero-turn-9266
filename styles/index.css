@@ -32,6 +32,12 @@
 }
 #container1>div{
    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+   transition:.9s;
+}
+
+#container1>div:hover{
+  cursor:pointer;
+  scale:1.03;
 }
 
 #container1>div:nth-child(1){
@@ -161,10 +167,14 @@
 #camping-gear>div:hover{
     cursor:pointer;
     scale:1.02;
+    /* border:5px solid red; */
+
 }
 #camping-gear img{
     width:100%;
     height:100%;
+    border-radius:5px;
+
 
 }
 #camping-gear>div:nth-child(1){
@@ -205,10 +215,12 @@
 #exp-cont>div{
     /* border:1px solid red; */
     transition:.9s;
+    border-radius:5px;
 }
 
 #exp-cont>div:hover{
     scale:1.04;
+    cursor:pointer;
 }
 
 #exp-cont img{
@@ -249,7 +261,7 @@
     transition:.9s;
 }
 #foot-cont>div:hover{
-    scale:1.04;
+    scale:1.06;
     cursor:pointer;
 }
 
