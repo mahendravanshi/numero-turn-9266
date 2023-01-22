@@ -1,6 +1,7 @@
 
 import nav from "./nav.js"
 import footer from "./footer.js"
+// import topSearch
 
 let mainFooter = document.getElementById("footer");
 let mainNav = document.getElementById("nav")
@@ -15,7 +16,12 @@ mainFooter.innerHTML = footer;
 
 
 let cartArr = (JSON.parse(localStorage.getItem("trend-cart-key"))) ||[];
-console.log(cartArr)
+// console.log(cartArr)
+let queryArr = JSON.parse(localStorage.getItem("query-data"))||[];
+console.log(queryArr);
+// let x = queryArr[queryArr-length-1].query;
+
+
 let navCount = document.getElementById("cart-show-nav");
 navCount.innerText= cartArr.length;
 
@@ -38,7 +44,21 @@ let url3 = "http://localhost:8080/all?_sort=price&_order=desc";
 
 let isLoader = true;
 
-fetchData(url);
+
+if(queryArr.length>0){
+    let x = queryArr[queryArr.length-1].query;
+    console.log(x);
+
+    let url = `http://localhost:8080/all?q=${x}`;
+    fetchData(url)
+    // console.log("fetching")
+
+}
+else{
+    fetchData(url)
+}
+
+
 
 
 
@@ -125,7 +145,7 @@ async function fetchData(url){
         
        console.log(data)
         fetchedArr = data;
-        
+        localStorage.removeItem("query-data")
         isLoader = false;
         if(!isLoader){
     

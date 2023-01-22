@@ -77,24 +77,29 @@
     gap:20px;
 }
 #shop-by-img{
-     display:flex;
-     justify-content:space-around;
-     height:40%;
+     /* display:flex; */
+     /* justify-content:space-around; */
+     display:grid;
+     grid-template-columns: repeat(5,1fr);
+     /* height:40%; */
+     /* border:1px solid black; */
 
 }
 #shop-by-img>div{
-    height:40%;
+    height:60%;
     margin:auto;
     display:flex;
     flex-flow:column;
-    gap:15px;
+    gap:5px;
     text-align:center;
+    /* border:1px solid red; */
+    justify-content:center;
 
 }
 #shop-by-img>div>img{
-    height:10%;
+    height:100%;
     /* border:1px solid red; */
-    width:40%;
+    width:70%;
     margin:auto;
     transition:.9s;
 }
@@ -431,6 +436,10 @@
 
     }
 
+    #shop-by-img{
+        grid-template-columns: repeat(3,1fr);
+    }
+
     #camping-gear{
     grid-template-columns:repeat(2,1fr);
     grid-template-areas:
@@ -485,6 +494,10 @@
     "img3"
     "img4"
         
+    }
+
+    #shop-by-img{
+        grid-template-columns: repeat(2,1fr);
     }
     #exp-cont{
     grid-template-columns: repeat(1,1fr);
