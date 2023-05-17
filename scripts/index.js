@@ -16,7 +16,7 @@ mainFooter.innerHTML = footer;
 // scroll click
 
 let topScroll = document.getElementById("topScroll");
-topScroll.addEventListener("click",()=>{
+topScroll.addEventListener("click",(event)=>{
     event.preventDefault();
     window.scroll(0,0);
 })
@@ -29,7 +29,7 @@ let formQuery = document.querySelector("form");
 
 formQuery.addEventListener("submit",formSubmitQuery);
 
-function formSubmitQuery(){
+function formSubmitQuery(event){
     event.preventDefault();
     
     let x = {
