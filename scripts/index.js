@@ -65,7 +65,7 @@ let container9 = document.querySelector("#top-brands-div");
 
 
 let imgArr1 = [
-    {img:"https://images.contentstack.io/v3/assets/blt7841d2a593726d96/blt150f1f4a20849850/63c1af3a3431f93ff7f796db/011723_SeizeTheFreeze_Hero_Desktop.jpg?format=pjpg&auto=webp"},
+    {img:"https://media.graphassets.com/KHd0BJHvSZ2bAtLAWqEQ?format=pjpg&auto=webp"},
     {img:"https://images.contentstack.io/v3/assets/blt7841d2a593726d96/blt841ddbf5cff952ee/63c6c25b184b72418acdccc2/012423_SeizetheFreeze_HP_03.jpg?format=pjpg&amp;auto=webp&quot"},
     {img:"https://images.contentstack.io/v3/assets/blt7841d2a593726d96/bltc4e25b209e6bfbf4/63c6c25b2cbcfb0454a2b8c5/012423_SeizetheFreeze_HP_03-02.jpg?format=pjpg&auto=webp"},
     {img:"https://images.contentstack.io/v3/assets/blt7841d2a593726d96/blt1d9641f03f54c9ab/63c6c25be97936109ef2bbb5/012423_SeizetheFreeze_HP_07.jpg?format=pjpg&auto=webp"},
@@ -86,10 +86,12 @@ let shopByArr = [
     text:"CYCLE"},
 ]
 
+
+
 let shopByBottom = [
-    {img:"https://images.contentstack.io/v3/assets/blt7841d2a593726d96/blt13b1e3a031b25dd7/63c6c25b4977081097259e24/012423_SeizetheFreeze_HP_13.jpg?format=pjpg&auto=webp"},
-    {img:"https://images.contentstack.io/v3/assets/blt7841d2a593726d96/blt9650c77a5cae5620/63c6c25b08b84c3d9e4c97a7/012423_SeizetheFreeze_HP_13-05.jpg?format=pjpg&auto=webp"},
-    {img:"https://images.contentstack.io/v3/assets/blt7841d2a593726d96/blte9464b509027d693/63c6c25cbe10fd14ecb45d6e/012423_SeizetheFreeze_HP_13-06.jpg?format=pjpg&auto=webp"},
+    {img:"https://media.graphassets.com/oPV693GQ5q9htXMruhkr?format=pjpg&auto=webp"},
+    {img:"https://media.graphassets.com/SIH1JRz2R1aDiGwveLUK?format=pjpg&auto=webp"},
+    {img:"https://media.graphassets.com/wwYOixLISVSmcrvdb7VT?format=pjpg&auto=webp"},
 ]
 
 let campingGear = [
@@ -159,18 +161,18 @@ let topBrands = [
 
 
 
-fetchContainer1(imgArr1);
-fetchContainer2(shopByArr);
-fetchContainer3(shopByBottom)
-fetchContainer4(campingGear)
-fetchContainer5(exp);
-fetchContainer6(footTerrain);
-fetchContainer7(instaFollow);
-fetchContainer8(instaBottom,container8);
-fetchContainer8(topBrands,container9);  //container9
+fetchContainer(imgArr1,container1);
+fetchContainer(shopByArr,container2);
+fetchContainer(shopByBottom,container3)
+fetchContainer(campingGear,container4)
+fetchContainer(exp,container5);
+fetchContainer(footTerrain,container6);
+fetchContainer(instaFollow,container7);
+fetchContainer(instaBottom,container8);
+fetchContainer(topBrands,container9);  //container9
 
 
-function fetchContainer8(data,container){
+function fetchContainer(data,container){
 
     container.innerHTML =null;
     data.forEach(el=>{
@@ -184,117 +186,7 @@ function fetchContainer8(data,container){
        container.append(div)
     })
 }
-function fetchContainer7(data){
 
-    container7.innerHTML =null;
-    data.forEach(el=>{
-
-       let img = document.createElement("img");
-       img.src = el.img;
-
-       
-
-       container7.append(img)
-    })
-}
-function fetchContainer6(data){
-
-    container6.innerHTML =null;
-    data.forEach(el=>{
-       let div = document.createElement("div");
-
-       let img = document.createElement("img");
-       img.src = el.img;
-
-       div.append(img);
-
-       container6.append(div)
-    })
-}
-
-function fetchContainer5(data){
-
-    container5.innerHTML =null;
-    data.forEach(el=>{
-       let div = document.createElement("div");
-
-       let img = document.createElement("img");
-       img.src = el.img;
-
-       div.append(img);
-
-       container5.append(div)
-    })
-}
-
-
-
-function fetchContainer4(data){
-
-     container4.innerHTML =null;
-     data.forEach(el=>{
-        let div = document.createElement("div");
-
-        let img = document.createElement("img");
-        img.src = el.img;
-
-        div.append(img);
-
-        container4.append(div)
-     })
-}
-
-
-function fetchContainer3(data){
-    container3.innerHTML = null;
-    data.forEach(el=>{
-        let div = document.createElement("div");
-        
-
-        let img = document.createElement("img");
-        img.src=  el.img;
-
-        div.append(img);
-
-        container3.append(div)
-    })
-}
-
-
-function fetchContainer2(data){
-      container2.innerHTML = null;
-    data.forEach(el=>{
-         let div = document.createElement("div");
-         let img = document.createElement("img");
-         img.src = el.img;
-
-         let title = document.createElement("p");
-         title.innerText = el.text;
-
-         div.append(img,title);
-         container2.append(div);
-
-
-    })
-}
-
-
-
-function fetchContainer1(data){
-    container1.innerHTML = null;
-
-    data.forEach((el)=>{
-
-        let div = document.createElement("div");
-
-        let img = document.createElement("img");
-
-        img.src = el.img;
-
-        div.append(img);
-        container1.append(div);
-    })
-}
 
 
 // mens,womens,kids click link

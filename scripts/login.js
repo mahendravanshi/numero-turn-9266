@@ -9,6 +9,11 @@ mainFooter.innerHTML = footer;
 
 
 
+
+let showLogin = document.getElementById("login-name");
+
+
+
 let topScroll = document.getElementById("topScroll");
 topScroll.addEventListener("click",()=>{
     event.preventDefault();
@@ -36,7 +41,7 @@ function formSubmitQuery(){
 }
 
 let signArr = JSON.parse(localStorage.getItem("signup"))||[];
-
+console.log(signArr);
 
 let form = document.getElementById("login");
 
@@ -58,19 +63,21 @@ function show(){
 form.addEventListener("submit",formSubmit);
 
 
+let name
 function formSubmit(){
     event.preventDefault();
-
     let email = form.email.value;
     let pass = form.password.value;
-
+    
     let isSign = false;
     for(let i=0;i<signArr.length;i++){
-
+        // name = signArr[i].fname
         let e = signArr[i].email;
         let p = signArr[i].pass;
         if(e==email&&p==pass){
-            isSign = true
+            isSign = true;
+            name = signArr[i].fname
+            
             break;
         }
 
@@ -79,6 +86,7 @@ function formSubmit(){
     if(isSign){
         alert("Succesfully logged in");
         window.location.href = "index.html";
+        showLogin.innerText = name;
         
     }
     else{
@@ -88,6 +96,8 @@ function formSubmit(){
     
 
 }
+
+
 
 
 

@@ -53,6 +53,8 @@ let total = document.getElementById("totalPrice")
 
 
 let cartArr = (JSON.parse(localStorage.getItem("trend-cart-key"))) ||[];
+
+console.log(cartArr);
 let checkArr = JSON.parse(localStorage.getItem("check-form"))||[];
 let navCount = document.getElementById("cart-show-nav")
 navCount.innerText = cartArr.length;
