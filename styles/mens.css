@@ -117,7 +117,23 @@
     /* display:inline; */
 }
 
+#pagination{
+    display: flex;
+    gap:10px;
+    /* border:1px solid red; */
+    width:25%;
+    justify-content:center;
+    margin:auto;
+    margin-top:50px;
+}
 
+#pagination button{
+    padding:10px 20px;
+    background: #000;
+    color:white;
+    border-radius: 10px;
+    cursor:pointer;
+}
 
 
 @media screen and (min-width:900px) and (max-width:1300px) {
@@ -127,6 +143,9 @@
     width:70%;
     margin:auto
 
+    }
+    #pagination{
+        width:40%;
     }
 }
 @media screen and (min-width:500px) and (max-width:900px) {
@@ -139,6 +158,12 @@
 
     #container>div button{
         padding:0px;
+    }
+
+    #pagination{
+        width:60%;
+        margin:auto;
+
     }
 
 
@@ -155,5 +180,10 @@
 
     #container>div button{
         padding:0px;
+    }
+
+    #pagination{
+        width:100%;
+        margin:auto;
     }
 }

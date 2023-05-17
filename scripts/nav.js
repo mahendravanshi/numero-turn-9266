@@ -34,7 +34,7 @@ let nav = `
 <div id="nav-account">
     
         <img src="./images/user.png" alt="">
-        <p>My Accounts</p>
+        <p id="login-name">My Accounts</p>
     
 </div>
 <div id="nav-cart">

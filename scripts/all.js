@@ -1,11 +1,18 @@
+import footer from "./footer";
+import nav from "./nav";
 
-import nav from "./nav.js"
-import footer from "./footer.js"
+let signupCheck = JSON.parse(localStorage.getItem("signup"))||[]
+// console.log(signupCheck,"signup");
+// import nav from "./nav.js"
+// import footer from "./footer.js"
 // import topSearch
+
+
 
 let mainFooter = document.getElementById("footer");
 let mainNav = document.getElementById("nav")
 
+let isLoader = true;
 
 
 let img = document.createElement("img");
@@ -40,15 +47,44 @@ let total = document.querySelector("#total");
 
 
 
+// pagination starts here
+
+let pageDiv = document.getElementById("pageNoDiv");
+
+let lurl = "https://numero-backend.vercel.app/all";
+let lData= [];
+let length;
+let noOfPages;
+let limit = 20;
+let count = 1;
+let first = document.getElementById("first")
+let prev = document.getElementById("prev")
+let next = document.getElementById("next")
+let last = document.getElementById("last")
+fetchLength(lurl);
+
+async function fetchLength(url){
+    let res = await fetch(url);
+    // console.log(res);
+    let data = await res.json();
+    lData = data;
+    length = lData.length;
+    total.innerText = length;
+    console.log(lData);
+    // console.log("length is"+ lData.length)
+    // console.log()
+    // console.log(`lData is ${lData}`)
+}
+
+// 
 
 let fetchedArr = [];
 
 let container1 = document.getElementById("container")
-let url = "https://numero-backend.vercel.app/all";
+let url = `https://numero-backend.vercel.app/all?_page=${count}&_limit=${limit}`
 let url2 = "https://numero-backend.vercel.app/all?_sort=price&_order=asc";
 let url3 = "https://numero-backend.vercel.app/all?_sort=price&_order=desc";
 
-let isLoader = true;
 
 
 if(queryArr.length>0){
@@ -106,13 +142,13 @@ function filterPriceFun(){
         }
 
         if(filterPrice.value=="asc"){
-            let url2 = "https://numero-backend.vercel.app/all?_sort=price&_order=asc";
+            let url2 = `https://numero-backend.vercel.app/all?_sort=price&_order=asc&_page=${count}&_limit=${limit}`;
             fetchData(url2)
 
         }
 
         if(filterPrice.value=="desc"){
-            let url3 = "https://numero-backend.vercel.app/all?_sort=price&_order=desc";
+            let url3 = `https://numero-backend.vercel.app/all?_sort=price&_order=desc&_page=${count}&_limit=${limit}`;
             fetchData(url3)
         }
     }
@@ -199,19 +235,25 @@ function displayData(data){
         
 
         add.addEventListener("click",()=>{
-            
-            if(checkData(obj)){
-                alert("Product already in cart");
+            if(signupCheck.length>0){
+                if(checkData(obj)){
+                    alert("Product already in cart");
+                }
+    
+                else{
+                    cartArr.push({...obj,quantity:1});
+                    // console.log(cartArr)
+                    navCount.innerText = cartArr.length;
+                    
+                    localStorage.setItem("trend-cart-key",JSON.stringify(cartArr))
+                    alert("Product added to cart")
+                }
             }
-
             else{
-                cartArr.push({...obj,quantity:1});
-                // console.log(cartArr)
-                navCount.innerText = cartArr.length;
-                
-                localStorage.setItem("trend-cart-key",JSON.stringify(cartArr))
-                alert("Product added to cart")
+                alert("Please signup");
+                window.location.href = "signup.html"
             }
+           
              
         })
 
@@ -226,7 +268,7 @@ function displayData(data){
         container1.append(div)
 
 
-        total.innerText = data.length;
+        // total.innerText = data.length;
 
 
     })
@@ -244,6 +286,143 @@ function checkData(obj){
 
     return false;
 }
+
+
+
+// pagination
+
+
+if(count==1){
+    prev.disabled = true;
+    prev.style.opacity = .7;
+    first.disabled = true ;
+    first.style.opacity = .7;
+
+}
+if(count!=1){
+    prev.disabled = false;
+    prev.style.opacity = 1;
+    first.disabled = false ;
+    first.style.opacity = 1;
+}
+
+first.addEventListener("click",()=>{
+
+    count = 1;
+
+    if(count!=noOfPages){
+        last.disabled = false;
+        last.style.opacity = 1;
+        next.disabled = false ;
+        next.style.opacity = 1;
+    }
+    if(count==1){
+        prev.disabled = true;
+        prev.style.opacity = .7;
+        first.disabled = true ;
+        first.style.opacity = .7;
+    
+    }
+    pageDiv.innerText = count;
+    let url = `https://numero-backend.vercel.app/all?_page=${count}&_limit=${limit}`
+    fetchData(url);
+    window.scrollTo(0, 0);
+})
+
+// console.log(noOfPages);
+last.addEventListener("click",()=>{
+     
+  noOfPages =  Math.ceil(length/limit);
+    count = noOfPages;
+        
+        if(count!=1){
+            prev.disabled = false;
+            prev.style.opacity = 1;
+            first.disabled = false ;
+            first.style.opacity = 1;
+        }
+        if(count==noOfPages){
+            next.disabled = true;
+            next.style.opacity = .7;
+            last.disabled = true ;
+            last.style.opacity = .7;
+        }
+    
+    // console.log(length,"66")
+    console.log(noOfPages,"pages");
+    // console.log(count)
+    pageDiv.innerText = count;
+
+    let url = `https://numero-backend.vercel.app/all?_page=${count}&_limit=${limit}`
+    fetchData(url)
+    window.scrollTo(0, 0);
+})
+prev.addEventListener("click",()=>{
+    if(count!=1){
+        count--;
+
+        if(count==1){
+            prev.disabled = true;
+            prev.style.opacity = .7;
+            first.disabled = true ;
+            first.style.opacity = .7;
+           
+        }
+    }
+    if(count==1){
+        prev.disabled = true;
+        prev.style.opacity = .7;
+        first.disabled = true ;
+        first.style.opacity = .7;
+       
+    }
+    if(count!=noOfPages){
+        last.disabled = false;
+        last.style.opacity = 1;
+        next.disabled = false ;
+        next.style.opacity = 1;
+    }
+
+
+        
+        pageDiv.innerText = count;
+        let url = `https://numero-backend.vercel.app/all?_page=${count}&_limit=${limit}`
+       fetchData(url);
+       window.scrollTo(0, 0);
+})
+
+
+next.addEventListener("click",()=>{
+   
+    noOfPages =  Math.ceil(length/limit);
+
+    // if(count==noOfPages){
+    //     console.log("do nothing")
+    // }
+    count++;
+    if(count!=1){
+        prev.disabled = false;
+        prev.style.opacity = 1;
+        first.disabled = false ;
+        first.style.opacity = 1;
+    }
+    if(count==noOfPages){
+        next.disabled = true;
+        next.style.opacity = .7;
+        last.disabled = true ;
+        last.style.opacity = .7;
+    }
+    pageDiv.innerText = count;
+    prev.disabled = false;
+
+
+    // console.log(count)
+    let url = `https://numero-backend.vercel.app/all?_page=${count}&_limit=${limit}`
+    fetchData(url)
+    window.scrollTo(0, 0);
+})
+
+    pageDiv.innerText = count;
 
 
 
