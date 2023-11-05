@@ -208,7 +208,7 @@ function displayData(data){
         img.src = el.img1;
 
         let title1 = document.createElement("h4");
-        title1.innerText = el.title;
+        title1.innerText = el.title1;
 
         let title2 = document.createElement("p");
         title2.innerText = el.title2;
@@ -218,7 +218,7 @@ function displayData(data){
 
         let obj = {
             img:el.img1,
-            title1:el.title,
+            title1:el.title1,
             title2:el.title2,
             price:+(el.price),
 
