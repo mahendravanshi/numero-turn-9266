@@ -1,13 +1,8 @@
-import footer from "./footer";
-import nav from "./nav";
-
 let signupCheck = JSON.parse(localStorage.getItem("signup"))||[]
-// console.log(signupCheck,"signup");
-// import nav from "./nav.js"
-// import footer from "./footer.js"
+
+import nav from "./nav.js"
+import footer from "./footer.js"
 // import topSearch
-
-
 
 let mainFooter = document.getElementById("footer");
 let mainNav = document.getElementById("nav")
@@ -22,7 +17,7 @@ mainNav.innerHTML = nav;
 mainFooter.innerHTML = footer;
 
 let topScroll = document.getElementById("topScroll");
-topScroll.addEventListener("click",()=>{
+topScroll.addEventListener("click",(event)=>{
     event.preventDefault();
     window.scroll(0,0);
 })
@@ -68,6 +63,7 @@ async function fetchLength(url){
     // console.log(res);
     let data = await res.json();
     lData = data;
+    console.log(lData);
     length = lData.length;
     total.innerText = length;
     console.log(lData);
@@ -212,7 +208,7 @@ function displayData(data){
         img.src = el.img1;
 
         let title1 = document.createElement("h4");
-        title1.innerText = el.title1;
+        title1.innerText = el.title;
 
         let title2 = document.createElement("p");
         title2.innerText = el.title2;
@@ -222,7 +218,7 @@ function displayData(data){
 
         let obj = {
             img:el.img1,
-            title1:el.title1,
+            title1:el.title,
             title2:el.title2,
             price:+(el.price),
 
@@ -235,6 +231,7 @@ function displayData(data){
         
 
         add.addEventListener("click",()=>{
+            
             if(signupCheck.length>0){
                 if(checkData(obj)){
                     alert("Product already in cart");
@@ -253,7 +250,6 @@ function displayData(data){
                 alert("Please signup");
                 window.location.href = "signup.html"
             }
-           
              
         })
 
