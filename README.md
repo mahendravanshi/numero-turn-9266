@@ -2,6 +2,6 @@
 
 
 # deployed link
-https://guileless-beijinho-cda63d.netlify.app/
+https://classy-crepe-e3b446.netlify.app/
 
 
