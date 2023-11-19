@@ -2,6 +2,6 @@
 
 
 # deployed link
-https://classy-crepe-e3b446.netlify.app/
+https://singular-daifuku-c414ab.netlify.app/
 
 
